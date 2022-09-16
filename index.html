@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body id="body" class="" style="background-color: rgb(239, 239, 239);">
+  <div id="layer" class="  vh-100  position-absolute row d-none align-items-center justify-content-center  "
+    style="background-color: rgba(0, 0, 0,0.8); width: 100.8%;  z-index: 999999999;">
+    <img class=" position-relative mt-5" id="mainlayerimg" src="./images/image-product-1.jpg"
+      style="z-index: 9; width: 33%;" alt="">
+    <i id="close" onclick="closse()" class="fas fa-times  maincolor top-0 mt-4 position-absolute "
+      style="z-index: 99999999999999999; cursor: pointer; font-size: 30px;  padding-left: 1000px;"></i>
+ 
+    <div class="half1 col-md-12 d-flex justify-content-center mt-3" style="z-index: 9999;">
+      <img id="layerimg1" onclick="getlayersrc([this.id,this.src])" class="imgs1 col-md-2 me-3"
+        src="./images/image-product-1.jpg" alt="">
+      <img id="layerimg2" onclick="getlayersrc([this.id,this.src])" class="imgs1 col-md-2 me-3 "
+        src="./images/image-product-2.jpg" alt="">
+      <img id="layerimg3" onclick="getlayersrc([this.id,this.src])" class="imgs1 col-md-2 me-3"
+        src="./images/image-product-3.jpg" alt="">
+      <img id="layerimg4" onclick="getlayersrc([this.id,this.src])" class="imgs1 col-md-2 "
+        src="./images/image-product-4.jpg" alt="">
+    </div>
+  </div>
+  <nav id="nav" class="navbar navbar-expand-md navbar-light bg-transparent container">
+    <div class="container-fluid col-12 ">
+      <a class="  navbar-brand  fw-bold fs-1 w-auto col-3" href="#">Sneaker</a>
+      <button style="z-index: 99 ;" class="navbar-toggler" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse col-9 firstDivNNav" id="navbarNavAltMarkup">
+        <div class="navbar-nav col-4">
+          <a id="hhh" class="nav-link active" aria-current="page" href="#">collections</a>
+          <a class="nav-link" href="#">man</a>
+          <a id="setting" class="nav-link" href="#">women</a>
+          <a class="nav-link me-5" href="#"> contact</a>
+        </div>
+        <div class=" col-5 justify-content-end d-flex align-items-center  mt-1">
+          <a id="moon" onclick="tosun()" class="nav-link  bg-black rounded-circle   opacity-0"
+            style="width: 40px; height: 40px; transition: 0.5s;"><i class="fas fa-moon text-white"
+              style="cursor: pointer;"></i></a>
+          <a id="sun" onclick="tomoon()" class="nav-link  maincolor   ms-5 opacity-1"
+            style="width: 40px; height: 40px;  transition: 0.5s; "><i class="fas fa-sun maincolor fs-4"
+              style="cursor: pointer;"></i></a>
+        </div>
+        <div class=" d-flex  align-items-center  col-3 justify-content-end   ">
+          <i onclick="openCart()" style="cursor: pointer;" class="mood fab fa-opencart me-3 "></i>
+          <div class=" " style=" width: 50px;">
+            <img src="./images/image-avatar.png" class="w-100 " alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <hr class=" container " style="opacity: 10%;">
+
+  <div class=" container">
+    <div class=" row position-relative " style="margin-top: 10px;">
+      <div id="cart" class=" d-none bg-white  mx-3 position-absolute rounded-3  d-flex flex-column  "
+        style="z-index: 999999; box-shadow: 0 19px 20px 2px rgb(0 0 0 / 10%); right: -20px; top: -25px; width: 30%;">
+        <div class=" d-flex justify-content-between flex-row">
+          <h4 class="mx-2 mt-3 maincolor">CART <i class="fab fa-opencart  "></i></h4>
+          <i style="cursor: pointer;" id="close" onclick="closeCart()"
+            class="fas fa-times  maincolor mt-3 me-2 fs-5 "></i>
+        </div>
+        <hr>
+        <div id="innerCart" class="d-flex flex-row align-items-center justify-content-between mx-3">
+        </div>
+        <div class=" d-flex justify-content-center my-4">
+          <button class="btn bg-orange w-100 mx-3 py-2 text-white fw-bold "> Checkout </button>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-6 d-flex  align-items-center flex-column   ">
+        <img onclick="layerup(this.src)" id="mainimg" class=" w-75 h-75" style="border-radius: 10px; cursor: pointer;"
+          src="./images/image-product-1.jpg" alt="">
+        <div class="half1 col-md-12 d-flex justify-content-center mt-3">
+          <img id="img1" onclick="getsrc([this.id,this.src])" class="imgs col-md-2 me-3 activ1"
+            src="./images/image-product-1.jpg" alt="">
+          <img id="img2" onclick="getsrc([this.id,this.src])" class="imgs col-md-2 me-3"
+            src="./images/image-product-2.jpg" alt="">
+          <img id="img3" onclick="getsrc([this.id,this.src])" class="imgs col-md-2 me-3"
+            src="./images/image-product-3.jpg" alt="">
+          <img id="img4" onclick="getsrc([this.id,this.src])" class="imgs col-md-2 " src="./images/image-product-4.jpg"
+            alt="">
+        </div>
+      </div>
+      <div class=" half2 col-sm-12  p-5 col-lg-6 d-flex flex-column justify-content-around my-5" style="width: 35%;">
+        <h6 class="mood maincolor">Sneaker Company</h6>
+        <h1 class="mood fw-bold"> Fall Limited Edition Sneakers</h1>
+        <p class="mood opacity-50">These low-profile sneakers are your perfect casual wear companion. Featuring a
+          durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        <div class=" d-flex flex-row align-items-center">
+          <h4 id="price" class="mood d-flex align-items-center "> $125.00</h4>
+          <p class="ms-2 mt-2 fs-6 maincolor maincolorbg px-1 rounded-3">50%</p>
+        </div>
+        <p id="total" class="mood text-decoration-line-through opacity-50">$250.00</p>
+        <div class=" buttons d-flex align-items-center flex-wrap ">
+          <div id="count" class="mood2 col-md-4 col-12 col-12 d-flex justify-content-between rounded-3 "
+            style="background-color: rgba(180, 177, 177, 0.5); padding: 7.5px 5px;"><span onclick="minuus()"
+              style="cursor: pointer;"><i class="fas fa-minus maincolor"></i></span> 1 <span onclick="plus()"
+              style="cursor: pointer;"><i class="maincolor fas fa-plus"></i></span></div>
+          <button onclick="addToCart()" class="col-md-7 col-12 btn offset-md-1 col-sm-12 bg-orange text-white"> <i
+              class="fab fa-opencart me-3"></i> add to
+            cart</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://kit.fontawesome.com/7f67775be0.js" crossorigin="anonymous"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
